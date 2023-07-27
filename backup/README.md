@@ -36,7 +36,6 @@
 + Прописать настройки для программы в файле settings.cong на основе ниже
 рассмотренных примеров. 
 <br>
-<br>
   - `rar_path` - путь до программы WinRaR
     + > Пример: rar_path = C:\Program Files\WinRAR\winrar.exe
 
