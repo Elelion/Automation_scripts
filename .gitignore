@@ -1,3 +1,6 @@
 .idea
+.DS_Store
+
 backup/settings.conf
 backup/.env
+main.py
