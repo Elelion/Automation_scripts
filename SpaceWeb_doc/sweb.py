@@ -16,7 +16,7 @@ from cryptography.fernet import Fernet
 # **
 
 
-# Настроим формат для логирования с цветами
+# Настроим формат для логирования
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
@@ -54,7 +54,7 @@ def crypto_key_generation_once():
 
     key = Fernet.generate_key()
 
-    with open('../space_check/111/key.key', 'wb') as f:
+    with open('key.key', 'wb') as f:
         f.write(key)
 
     print("Ключ сохранен в key.key — НЕ передавать никому!")
@@ -68,7 +68,7 @@ def crypto_env_encryption_once():
 
     rb - read binary
     """
-    with open('../space_check/111/key.key', 'rb') as key_file:
+    with open('key.key', 'rb') as key_file:
         key = key_file.read()
         fernet = Fernet(key)  # создаем объект для шифрования с указанным ключом
 
@@ -77,7 +77,7 @@ def crypto_env_encryption_once():
 
         encrypted = fernet.encrypt(original)  # шифруем
 
-        with open('../space_check/111/.env.enc', 'wb') as encrypted_file:
+        with open('.env.enc', 'wb') as encrypted_file:
             encrypted_file.write(encrypted)  # сохраняем зашифрованный вариант
 
     print("✅ .env зашифрован → .env.enc")
@@ -96,12 +96,12 @@ def decryption_env_key():
     - .decode() — превращает результат из байтов в строку
     """
 
-    with open('../space_check/111/key.key', 'rb') as key_file:
+    with open('key.key', 'rb') as key_file:
         key = key_file.read()
 
     fernet = Fernet(key)
 
-    with open('../space_check/111/.env.enc', 'rb') as enc_file:
+    with open('.env.enc', 'rb') as enc_file:
         encrypted = enc_file.read()
 
     decrypted = fernet.decrypt(encrypted).decode()
