@@ -2,24 +2,38 @@
 .idea
 .DS_Store
 .env
+.env.enc
+key.key
 main.py
 
 # -----------------------------------------------------------------------------
 
 # backup
-# ...
+backup/for_linux/
 
 # -----------------------------------------------------------------------------
 
-# space_ckeck
+# PDF_compress
+PDF_compress/
+
+# -----------------------------------------------------------------------------
+
+# SERVER
+MSSQL_log_clear/
+AD_block_unblock_users/
+AD_log_off/
 space_check/
 
 # -----------------------------------------------------------------------------
 
 # SpaceWeb_doc
-SpaceWeb_doc/key.key
-SpaceWeb_doc/.env.enc
-SpaceWeb_doc/archive/
+SpaceWeb_doc/
+#SpaceWeb_doc/key.key
+#SpaceWeb_doc/.env.enc
+#SpaceWeb_doc/archive/
+#SpaceWeb_doc/run_sweb.bat
+#SpaceWeb_doc/SpaceWeb_doc.rar
+#SpaceWeb_doc/__pycache__
 
 # -----------------------------------------------------------------------------
 
